@@ -19,6 +19,7 @@ function RouteComponent() {
             <img src="http://www.feng.jp/hoshi/chiisana/banner/200_200shio1.jpg" alt="10月25日発売！『ちいさな彼女の小夜曲』応援中!!" />
           </a> 
         </div>
+        <Link to='/brand/whitepowder'>WhitePowder</Link>
       </div>
     </>
   )

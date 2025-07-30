@@ -16,6 +16,7 @@ import { Route as TestIndexRouteImport } from './routes/test/index'
 import { Route as BrandIndexRouteImport } from './routes/brand/index'
 import { Route as BrandTestRouteImport } from './routes/brand/test'
 import { Route as BrandLayoutRouteImport } from './routes/brand/_layout'
+import { Route as BrandLayoutWhitepowderIndexRouteImport } from './routes/brand/_layout/whitepowder/index'
 import { Route as BrandLayoutSpriteIndexRouteImport } from './routes/brand/_layout/sprite/index'
 import { Route as BrandLayoutFengIndexRouteImport } from './routes/brand/_layout/feng/index'
 
@@ -50,6 +51,12 @@ const BrandLayoutRoute = BrandLayoutRouteImport.update({
   id: '/_layout',
   getParentRoute: () => BrandRoute,
 } as any)
+const BrandLayoutWhitepowderIndexRoute =
+  BrandLayoutWhitepowderIndexRouteImport.update({
+    id: '/whitepowder/',
+    path: '/whitepowder/',
+    getParentRoute: () => BrandLayoutRoute,
+  } as any)
 const BrandLayoutSpriteIndexRoute = BrandLayoutSpriteIndexRouteImport.update({
   id: '/sprite/',
   path: '/sprite/',
@@ -69,6 +76,7 @@ export interface FileRoutesByFullPath {
   '/test': typeof TestIndexRoute
   '/brand/feng': typeof BrandLayoutFengIndexRoute
   '/brand/sprite': typeof BrandLayoutSpriteIndexRoute
+  '/brand/whitepowder': typeof BrandLayoutWhitepowderIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -77,6 +85,7 @@ export interface FileRoutesByTo {
   '/test': typeof TestIndexRoute
   '/brand/feng': typeof BrandLayoutFengIndexRoute
   '/brand/sprite': typeof BrandLayoutSpriteIndexRoute
+  '/brand/whitepowder': typeof BrandLayoutWhitepowderIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -88,6 +97,7 @@ export interface FileRoutesById {
   '/test/': typeof TestIndexRoute
   '/brand/_layout/feng/': typeof BrandLayoutFengIndexRoute
   '/brand/_layout/sprite/': typeof BrandLayoutSpriteIndexRoute
+  '/brand/_layout/whitepowder/': typeof BrandLayoutWhitepowderIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -99,8 +109,16 @@ export interface FileRouteTypes {
     | '/test'
     | '/brand/feng'
     | '/brand/sprite'
+    | '/brand/whitepowder'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/brand' | '/brand/test' | '/test' | '/brand/feng' | '/brand/sprite'
+  to:
+    | '/'
+    | '/brand'
+    | '/brand/test'
+    | '/test'
+    | '/brand/feng'
+    | '/brand/sprite'
+    | '/brand/whitepowder'
   id:
     | '__root__'
     | '/'
@@ -111,6 +129,7 @@ export interface FileRouteTypes {
     | '/test/'
     | '/brand/_layout/feng/'
     | '/brand/_layout/sprite/'
+    | '/brand/_layout/whitepowder/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -163,6 +182,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BrandLayoutRouteImport
       parentRoute: typeof BrandRoute
     }
+    '/brand/_layout/whitepowder/': {
+      id: '/brand/_layout/whitepowder/'
+      path: '/whitepowder'
+      fullPath: '/brand/whitepowder'
+      preLoaderRoute: typeof BrandLayoutWhitepowderIndexRouteImport
+      parentRoute: typeof BrandLayoutRoute
+    }
     '/brand/_layout/sprite/': {
       id: '/brand/_layout/sprite/'
       path: '/sprite'
@@ -183,11 +209,13 @@ declare module '@tanstack/react-router' {
 interface BrandLayoutRouteChildren {
   BrandLayoutFengIndexRoute: typeof BrandLayoutFengIndexRoute
   BrandLayoutSpriteIndexRoute: typeof BrandLayoutSpriteIndexRoute
+  BrandLayoutWhitepowderIndexRoute: typeof BrandLayoutWhitepowderIndexRoute
 }
 
 const BrandLayoutRouteChildren: BrandLayoutRouteChildren = {
   BrandLayoutFengIndexRoute: BrandLayoutFengIndexRoute,
   BrandLayoutSpriteIndexRoute: BrandLayoutSpriteIndexRoute,
+  BrandLayoutWhitepowderIndexRoute: BrandLayoutWhitepowderIndexRoute,
 }
 
 const BrandLayoutRouteWithChildren = BrandLayoutRoute._addFileChildren(

@@ -13,6 +13,8 @@ function App() {
         <h1>Welcome!</h1>
         <Link to='/brand'>Brand TOP</Link>
       </div>
+      <p>If you have any problems, please contace me</p>
+      <p>eroge@kurosiko.com</p>
       <header className="min-h-screen flex flex-col items-center justify-center bg-[#282c34] text-white text-[calc(10px+2vmin)]">
         <img
           src={logo}
