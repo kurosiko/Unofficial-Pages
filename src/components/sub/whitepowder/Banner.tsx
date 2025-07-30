@@ -30,7 +30,7 @@ export default function Banner(){
                 </div>
                 <p>link <strong>free</strong></p>
                 <a href="/">
-                    <img src="/public/resources/whitepowder/whitepowder.png" alt="wp"/>
+                    <img src="/resources/whitepowder/whitepowder.png" alt="wp"/>
                 </a>
             </div>
         </>
