@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 
 export default function Info(){
     const slide = useRef<HTMLDivElement>(null)
     const [slide_idx,setIdx] = useState(0)
+    /*
     useEffect(()=>{
         const rel_left_offset = ((slide.current?.childNodes[slide_idx] as HTMLElement).offsetLeft - (slide.current as HTMLElement).offsetLeft)
         if(!slide.current){
@@ -12,6 +13,7 @@ export default function Info(){
             slide.current.scrollLeft += 10
         } 
     },[slide_idx])
+    */
     return(
         <>
             <h3 className="uppercase text-2xl font-bold text-center pt-2">pick <strong className="text-red-600">up</strong> information</h3>
