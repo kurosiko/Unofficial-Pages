@@ -27,7 +27,7 @@ function RouteComponent() {
             onClick={()=>{setYTP((current:boolean)=>!current)}}
           >
             <img
-              src="/resources/whitepowder/lamunation.png"
+              src="/resources/whitepowder/lamunation.webp"
               alt="LAMUNATION"
               className='w-full'
             />

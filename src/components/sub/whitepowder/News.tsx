@@ -1,9 +1,14 @@
+import { useEffect, useState } from "react"
+
 export default function News(){
-    const content = [...Array(15)].map((_:undefined)=>{
-        // biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
-        return <p className="unoffical">unofficial<br/></p>
+    const [keys_news,setKeysNews] = useState<string[]>([])
+    const content = keys_news.map((key:string)=>{
+        return <p className="unoffical" key={key}>unofficial<br/></p>
             
     })
+    useEffect(()=>{
+        setKeysNews([...Array(15)].map((_:undefined)=>self.crypto.randomUUID()))
+    },[])
     return(
         <>
             <div className="flex flex-row gap-10 justify-center items-center py-2">

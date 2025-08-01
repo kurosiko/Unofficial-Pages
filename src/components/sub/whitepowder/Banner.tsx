@@ -7,30 +7,30 @@ export default function Banner(){
                     className="grid grid-cols-3 justify-items-center gap-2"
                 >
                     <a href="https://sagaplanets.product.co.jp/top.html">
-                        <img src="/resources/whitepowder/SAGA.jpg" alt="saga planets"/>
+                        <img src="/resources/whitepowder/SAGA.webp" alt="saga planets"/>
                     </a>
                     <a href="https://visual-arts.jp/">
-                        <img src="/resources/whitepowder/VisualAntena.png" alt="VA"/>
+                        <img src="/resources/whitepowder/VisualAntena.webp" alt="VA"/>
                     </a>
                     <a href="http://www.feng.jp/hoshi/chiisana/">
-                        <img src="/resources/whitepowder/littlegf.jpg" alt="littlegf"/>
+                        <img src="/resources/whitepowder/littlegf.webp" alt="littlegf"/>
                     </a>
                     <a href="https://x.com/lass_official">
-                        <img src="/resources/whitepowder/lass.gif" alt="lass"/>
+                        <img src="/resources/whitepowder/lass.webp" alt="lass"/>
                     </a>
                     <a href="http://www.hyperiyon.com/top.php">
-                        <img src="/resources/whitepowder/hyperion.gif" alt="hyperion"/>
+                        <img src="/resources/whitepowder/hyperion.webp" alt="hyperion"/>
                     </a>
                     <a href="https://spriterecordings.upper.jp/">
-                        <img src="/resources/whitepowder/spliterecording.jpg" alt="spliterecordings"/>
+                        <img src="/resources/whitepowder/spliterecording.webp" alt="spliterecordings"/>
                     </a>
                     <a href="/">
-                        <img src="/resources/whitepowder/RekkaKatakiri.jpg" alt="RekkaKatakiri"/>
+                        <img src="/resources/whitepowder/RekkaKatakiri.webp" alt="RekkaKatakiri"/>
                     </a>
                 </div>
                 <p>link <strong>free</strong></p>
                 <a href="/">
-                    <img src="/resources/whitepowder/whitepowder.png" alt="wp"/>
+                    <img src="/resources/whitepowder/whitepowder.webp" alt="wp"/>
                 </a>
             </div>
         </>
