@@ -19,8 +19,8 @@ function RouteComponent() {
         show_yt_player && <YT_Player id='rDnKUUPl1Jo' close_func={setYTP}/>
       }
       <Header/>
-      <main>
-        <div className='w-screen relative'>
+      <main className='w-screen relative *:w-full'>
+        <div>
           <button
             type='button'
             className='w-full'
