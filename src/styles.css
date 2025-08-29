@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 body {
   @apply m-0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -17,4 +16,35 @@ code {
 @font-face {
   font-family: "spacemono";
   src: url("/fonts/SpaceMono-Regular.ttf");
+}
+
+@font-face{
+  font-family: "oswald";
+  src: url("/fonts/Oswald-Regular.ttf");
+}
+
+@theme {
+  --font-oswald:"oswald";
+  --color-lamune:#00b0ff;
+  --animate-slide-in-right:slide-in-right 0.25s ease-in-out;
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+}
+
+@utility animation-delay-none{
+  animation-delay:0s
+}
+
+@utility animation-delay-* {
+    animation-delay: --value([*]);
+    animation-delay: calc(--value(integer) * 1ms);
 }

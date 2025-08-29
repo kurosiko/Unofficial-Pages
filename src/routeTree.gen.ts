@@ -8,25 +8,29 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { createFileRoute } from '@tanstack/react-router'
-
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TestIndexRouteImport } from './routes/test/index'
+import { Route as ProfileIndexRouteImport } from './routes/profile/index'
 import { Route as BrandIndexRouteImport } from './routes/brand/index'
+import { Route as BrandWhitepowderRouteImport } from './routes/brand/whitepowder'
 import { Route as BrandTestRouteImport } from './routes/brand/test'
-import { Route as BrandLayoutRouteImport } from './routes/brand/_layout'
-import { Route as BrandLayoutWhitepowderIndexRouteImport } from './routes/brand/_layout/whitepowder/index'
-import { Route as BrandLayoutSpriteIndexRouteImport } from './routes/brand/_layout/sprite/index'
-import { Route as BrandLayoutFengIndexRouteImport } from './routes/brand/_layout/feng/index'
+import { Route as BrandWhitepowderIndexRouteImport } from './routes/brand/whitepowder/index'
+import { Route as BrandSpriteIndexRouteImport } from './routes/brand/sprite/index'
+import { Route as BrandFengIndexRouteImport } from './routes/brand/feng/index'
+import { Route as BrandWhitepowderProductsIndexRouteImport } from './routes/brand/whitepowder/products/index'
+import { Route as BrandWhitepowderProductsLamunationRouteImport } from './routes/brand/whitepowder/products/lamunation'
+import { Route as BrandWhitepowderProductsLamunationIndexRouteImport } from './routes/brand/whitepowder/products/lamunation/index'
+import { Route as BrandWhitepowderProductsKirakiramonstersIndexRouteImport } from './routes/brand/whitepowder/products/kirakiramonsters/index'
+import { Route as BrandWhitepowderProductsLamunationStagesRouteImport } from './routes/brand/whitepowder/products/lamunation/stages'
+import { Route as BrandWhitepowderProductsLamunationSpecialRouteImport } from './routes/brand/whitepowder/products/lamunation/special'
+import { Route as BrandWhitepowderProductsLamunationMusicRouteImport } from './routes/brand/whitepowder/products/lamunation/music'
+import { Route as BrandWhitepowderProductsLamunationGalleryRouteImport } from './routes/brand/whitepowder/products/lamunation/gallery'
+import { Route as BrandWhitepowderProductsLamunationDownloadRouteImport } from './routes/brand/whitepowder/products/lamunation/download'
+import { Route as BrandWhitepowderProductsLamunationCompaignRouteImport } from './routes/brand/whitepowder/products/lamunation/compaign'
+import { Route as BrandWhitepowderProductsLamunationCharactersRouteImport } from './routes/brand/whitepowder/products/lamunation/characters'
+import { Route as BrandWhitepowderProductsLamunationAboutRouteImport } from './routes/brand/whitepowder/products/lamunation/about'
 
-const BrandRouteImport = createFileRoute('/brand')()
-
-const BrandRoute = BrandRouteImport.update({
-  id: '/brand',
-  path: '/brand',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,116 +41,265 @@ const TestIndexRoute = TestIndexRouteImport.update({
   path: '/test/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProfileIndexRoute = ProfileIndexRouteImport.update({
+  id: '/profile/',
+  path: '/profile/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BrandIndexRoute = BrandIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => BrandRoute,
+  id: '/brand/',
+  path: '/brand/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrandWhitepowderRoute = BrandWhitepowderRouteImport.update({
+  id: '/brand/whitepowder',
+  path: '/brand/whitepowder',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const BrandTestRoute = BrandTestRouteImport.update({
-  id: '/test',
-  path: '/test',
-  getParentRoute: () => BrandRoute,
+  id: '/brand/test',
+  path: '/brand/test',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const BrandLayoutRoute = BrandLayoutRouteImport.update({
-  id: '/_layout',
-  getParentRoute: () => BrandRoute,
+const BrandWhitepowderIndexRoute = BrandWhitepowderIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BrandWhitepowderRoute,
 } as any)
-const BrandLayoutWhitepowderIndexRoute =
-  BrandLayoutWhitepowderIndexRouteImport.update({
-    id: '/whitepowder/',
-    path: '/whitepowder/',
-    getParentRoute: () => BrandLayoutRoute,
+const BrandSpriteIndexRoute = BrandSpriteIndexRouteImport.update({
+  id: '/brand/sprite/',
+  path: '/brand/sprite/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrandFengIndexRoute = BrandFengIndexRouteImport.update({
+  id: '/brand/feng/',
+  path: '/brand/feng/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrandWhitepowderProductsIndexRoute =
+  BrandWhitepowderProductsIndexRouteImport.update({
+    id: '/products/',
+    path: '/products/',
+    getParentRoute: () => BrandWhitepowderRoute,
   } as any)
-const BrandLayoutSpriteIndexRoute = BrandLayoutSpriteIndexRouteImport.update({
-  id: '/sprite/',
-  path: '/sprite/',
-  getParentRoute: () => BrandLayoutRoute,
-} as any)
-const BrandLayoutFengIndexRoute = BrandLayoutFengIndexRouteImport.update({
-  id: '/feng/',
-  path: '/feng/',
-  getParentRoute: () => BrandLayoutRoute,
-} as any)
+const BrandWhitepowderProductsLamunationRoute =
+  BrandWhitepowderProductsLamunationRouteImport.update({
+    id: '/products/lamunation',
+    path: '/products/lamunation',
+    getParentRoute: () => BrandWhitepowderRoute,
+  } as any)
+const BrandWhitepowderProductsLamunationIndexRoute =
+  BrandWhitepowderProductsLamunationIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => BrandWhitepowderProductsLamunationRoute,
+  } as any)
+const BrandWhitepowderProductsKirakiramonstersIndexRoute =
+  BrandWhitepowderProductsKirakiramonstersIndexRouteImport.update({
+    id: '/products/kirakiramonsters/',
+    path: '/products/kirakiramonsters/',
+    getParentRoute: () => BrandWhitepowderRoute,
+  } as any)
+const BrandWhitepowderProductsLamunationStagesRoute =
+  BrandWhitepowderProductsLamunationStagesRouteImport.update({
+    id: '/stages',
+    path: '/stages',
+    getParentRoute: () => BrandWhitepowderProductsLamunationRoute,
+  } as any)
+const BrandWhitepowderProductsLamunationSpecialRoute =
+  BrandWhitepowderProductsLamunationSpecialRouteImport.update({
+    id: '/special',
+    path: '/special',
+    getParentRoute: () => BrandWhitepowderProductsLamunationRoute,
+  } as any)
+const BrandWhitepowderProductsLamunationMusicRoute =
+  BrandWhitepowderProductsLamunationMusicRouteImport.update({
+    id: '/music',
+    path: '/music',
+    getParentRoute: () => BrandWhitepowderProductsLamunationRoute,
+  } as any)
+const BrandWhitepowderProductsLamunationGalleryRoute =
+  BrandWhitepowderProductsLamunationGalleryRouteImport.update({
+    id: '/gallery',
+    path: '/gallery',
+    getParentRoute: () => BrandWhitepowderProductsLamunationRoute,
+  } as any)
+const BrandWhitepowderProductsLamunationDownloadRoute =
+  BrandWhitepowderProductsLamunationDownloadRouteImport.update({
+    id: '/download',
+    path: '/download',
+    getParentRoute: () => BrandWhitepowderProductsLamunationRoute,
+  } as any)
+const BrandWhitepowderProductsLamunationCompaignRoute =
+  BrandWhitepowderProductsLamunationCompaignRouteImport.update({
+    id: '/compaign',
+    path: '/compaign',
+    getParentRoute: () => BrandWhitepowderProductsLamunationRoute,
+  } as any)
+const BrandWhitepowderProductsLamunationCharactersRoute =
+  BrandWhitepowderProductsLamunationCharactersRouteImport.update({
+    id: '/characters',
+    path: '/characters',
+    getParentRoute: () => BrandWhitepowderProductsLamunationRoute,
+  } as any)
+const BrandWhitepowderProductsLamunationAboutRoute =
+  BrandWhitepowderProductsLamunationAboutRouteImport.update({
+    id: '/about',
+    path: '/about',
+    getParentRoute: () => BrandWhitepowderProductsLamunationRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/brand': typeof BrandLayoutRouteWithChildren
   '/brand/test': typeof BrandTestRoute
-  '/brand/': typeof BrandIndexRoute
+  '/brand/whitepowder': typeof BrandWhitepowderRouteWithChildren
+  '/brand': typeof BrandIndexRoute
+  '/profile': typeof ProfileIndexRoute
   '/test': typeof TestIndexRoute
-  '/brand/feng': typeof BrandLayoutFengIndexRoute
-  '/brand/sprite': typeof BrandLayoutSpriteIndexRoute
-  '/brand/whitepowder': typeof BrandLayoutWhitepowderIndexRoute
+  '/brand/feng': typeof BrandFengIndexRoute
+  '/brand/sprite': typeof BrandSpriteIndexRoute
+  '/brand/whitepowder/': typeof BrandWhitepowderIndexRoute
+  '/brand/whitepowder/products/lamunation': typeof BrandWhitepowderProductsLamunationRouteWithChildren
+  '/brand/whitepowder/products': typeof BrandWhitepowderProductsIndexRoute
+  '/brand/whitepowder/products/lamunation/about': typeof BrandWhitepowderProductsLamunationAboutRoute
+  '/brand/whitepowder/products/lamunation/characters': typeof BrandWhitepowderProductsLamunationCharactersRoute
+  '/brand/whitepowder/products/lamunation/compaign': typeof BrandWhitepowderProductsLamunationCompaignRoute
+  '/brand/whitepowder/products/lamunation/download': typeof BrandWhitepowderProductsLamunationDownloadRoute
+  '/brand/whitepowder/products/lamunation/gallery': typeof BrandWhitepowderProductsLamunationGalleryRoute
+  '/brand/whitepowder/products/lamunation/music': typeof BrandWhitepowderProductsLamunationMusicRoute
+  '/brand/whitepowder/products/lamunation/special': typeof BrandWhitepowderProductsLamunationSpecialRoute
+  '/brand/whitepowder/products/lamunation/stages': typeof BrandWhitepowderProductsLamunationStagesRoute
+  '/brand/whitepowder/products/kirakiramonsters': typeof BrandWhitepowderProductsKirakiramonstersIndexRoute
+  '/brand/whitepowder/products/lamunation/': typeof BrandWhitepowderProductsLamunationIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/brand': typeof BrandIndexRoute
   '/brand/test': typeof BrandTestRoute
+  '/brand': typeof BrandIndexRoute
+  '/profile': typeof ProfileIndexRoute
   '/test': typeof TestIndexRoute
-  '/brand/feng': typeof BrandLayoutFengIndexRoute
-  '/brand/sprite': typeof BrandLayoutSpriteIndexRoute
-  '/brand/whitepowder': typeof BrandLayoutWhitepowderIndexRoute
+  '/brand/feng': typeof BrandFengIndexRoute
+  '/brand/sprite': typeof BrandSpriteIndexRoute
+  '/brand/whitepowder': typeof BrandWhitepowderIndexRoute
+  '/brand/whitepowder/products': typeof BrandWhitepowderProductsIndexRoute
+  '/brand/whitepowder/products/lamunation/about': typeof BrandWhitepowderProductsLamunationAboutRoute
+  '/brand/whitepowder/products/lamunation/characters': typeof BrandWhitepowderProductsLamunationCharactersRoute
+  '/brand/whitepowder/products/lamunation/compaign': typeof BrandWhitepowderProductsLamunationCompaignRoute
+  '/brand/whitepowder/products/lamunation/download': typeof BrandWhitepowderProductsLamunationDownloadRoute
+  '/brand/whitepowder/products/lamunation/gallery': typeof BrandWhitepowderProductsLamunationGalleryRoute
+  '/brand/whitepowder/products/lamunation/music': typeof BrandWhitepowderProductsLamunationMusicRoute
+  '/brand/whitepowder/products/lamunation/special': typeof BrandWhitepowderProductsLamunationSpecialRoute
+  '/brand/whitepowder/products/lamunation/stages': typeof BrandWhitepowderProductsLamunationStagesRoute
+  '/brand/whitepowder/products/kirakiramonsters': typeof BrandWhitepowderProductsKirakiramonstersIndexRoute
+  '/brand/whitepowder/products/lamunation': typeof BrandWhitepowderProductsLamunationIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/brand': typeof BrandRouteWithChildren
-  '/brand/_layout': typeof BrandLayoutRouteWithChildren
   '/brand/test': typeof BrandTestRoute
+  '/brand/whitepowder': typeof BrandWhitepowderRouteWithChildren
   '/brand/': typeof BrandIndexRoute
+  '/profile/': typeof ProfileIndexRoute
   '/test/': typeof TestIndexRoute
-  '/brand/_layout/feng/': typeof BrandLayoutFengIndexRoute
-  '/brand/_layout/sprite/': typeof BrandLayoutSpriteIndexRoute
-  '/brand/_layout/whitepowder/': typeof BrandLayoutWhitepowderIndexRoute
+  '/brand/feng/': typeof BrandFengIndexRoute
+  '/brand/sprite/': typeof BrandSpriteIndexRoute
+  '/brand/whitepowder/': typeof BrandWhitepowderIndexRoute
+  '/brand/whitepowder/products/lamunation': typeof BrandWhitepowderProductsLamunationRouteWithChildren
+  '/brand/whitepowder/products/': typeof BrandWhitepowderProductsIndexRoute
+  '/brand/whitepowder/products/lamunation/about': typeof BrandWhitepowderProductsLamunationAboutRoute
+  '/brand/whitepowder/products/lamunation/characters': typeof BrandWhitepowderProductsLamunationCharactersRoute
+  '/brand/whitepowder/products/lamunation/compaign': typeof BrandWhitepowderProductsLamunationCompaignRoute
+  '/brand/whitepowder/products/lamunation/download': typeof BrandWhitepowderProductsLamunationDownloadRoute
+  '/brand/whitepowder/products/lamunation/gallery': typeof BrandWhitepowderProductsLamunationGalleryRoute
+  '/brand/whitepowder/products/lamunation/music': typeof BrandWhitepowderProductsLamunationMusicRoute
+  '/brand/whitepowder/products/lamunation/special': typeof BrandWhitepowderProductsLamunationSpecialRoute
+  '/brand/whitepowder/products/lamunation/stages': typeof BrandWhitepowderProductsLamunationStagesRoute
+  '/brand/whitepowder/products/kirakiramonsters/': typeof BrandWhitepowderProductsKirakiramonstersIndexRoute
+  '/brand/whitepowder/products/lamunation/': typeof BrandWhitepowderProductsLamunationIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/brand'
     | '/brand/test'
-    | '/brand/'
+    | '/brand/whitepowder'
+    | '/brand'
+    | '/profile'
     | '/test'
     | '/brand/feng'
     | '/brand/sprite'
-    | '/brand/whitepowder'
+    | '/brand/whitepowder/'
+    | '/brand/whitepowder/products/lamunation'
+    | '/brand/whitepowder/products'
+    | '/brand/whitepowder/products/lamunation/about'
+    | '/brand/whitepowder/products/lamunation/characters'
+    | '/brand/whitepowder/products/lamunation/compaign'
+    | '/brand/whitepowder/products/lamunation/download'
+    | '/brand/whitepowder/products/lamunation/gallery'
+    | '/brand/whitepowder/products/lamunation/music'
+    | '/brand/whitepowder/products/lamunation/special'
+    | '/brand/whitepowder/products/lamunation/stages'
+    | '/brand/whitepowder/products/kirakiramonsters'
+    | '/brand/whitepowder/products/lamunation/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/brand'
     | '/brand/test'
+    | '/brand'
+    | '/profile'
     | '/test'
     | '/brand/feng'
     | '/brand/sprite'
     | '/brand/whitepowder'
+    | '/brand/whitepowder/products'
+    | '/brand/whitepowder/products/lamunation/about'
+    | '/brand/whitepowder/products/lamunation/characters'
+    | '/brand/whitepowder/products/lamunation/compaign'
+    | '/brand/whitepowder/products/lamunation/download'
+    | '/brand/whitepowder/products/lamunation/gallery'
+    | '/brand/whitepowder/products/lamunation/music'
+    | '/brand/whitepowder/products/lamunation/special'
+    | '/brand/whitepowder/products/lamunation/stages'
+    | '/brand/whitepowder/products/kirakiramonsters'
+    | '/brand/whitepowder/products/lamunation'
   id:
     | '__root__'
     | '/'
-    | '/brand'
-    | '/brand/_layout'
     | '/brand/test'
+    | '/brand/whitepowder'
     | '/brand/'
+    | '/profile/'
     | '/test/'
-    | '/brand/_layout/feng/'
-    | '/brand/_layout/sprite/'
-    | '/brand/_layout/whitepowder/'
+    | '/brand/feng/'
+    | '/brand/sprite/'
+    | '/brand/whitepowder/'
+    | '/brand/whitepowder/products/lamunation'
+    | '/brand/whitepowder/products/'
+    | '/brand/whitepowder/products/lamunation/about'
+    | '/brand/whitepowder/products/lamunation/characters'
+    | '/brand/whitepowder/products/lamunation/compaign'
+    | '/brand/whitepowder/products/lamunation/download'
+    | '/brand/whitepowder/products/lamunation/gallery'
+    | '/brand/whitepowder/products/lamunation/music'
+    | '/brand/whitepowder/products/lamunation/special'
+    | '/brand/whitepowder/products/lamunation/stages'
+    | '/brand/whitepowder/products/kirakiramonsters/'
+    | '/brand/whitepowder/products/lamunation/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BrandRoute: typeof BrandRouteWithChildren
+  BrandTestRoute: typeof BrandTestRoute
+  BrandWhitepowderRoute: typeof BrandWhitepowderRouteWithChildren
+  BrandIndexRoute: typeof BrandIndexRoute
+  ProfileIndexRoute: typeof ProfileIndexRoute
   TestIndexRoute: typeof TestIndexRoute
+  BrandFengIndexRoute: typeof BrandFengIndexRoute
+  BrandSpriteIndexRoute: typeof BrandSpriteIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/brand': {
-      id: '/brand'
-      path: '/brand'
-      fullPath: '/brand'
-      preLoaderRoute: typeof BrandRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -161,85 +314,209 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/profile/': {
+      id: '/profile/'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/brand/': {
       id: '/brand/'
-      path: '/'
-      fullPath: '/brand/'
+      path: '/brand'
+      fullPath: '/brand'
       preLoaderRoute: typeof BrandIndexRouteImport
-      parentRoute: typeof BrandRoute
+      parentRoute: typeof rootRouteImport
+    }
+    '/brand/whitepowder': {
+      id: '/brand/whitepowder'
+      path: '/brand/whitepowder'
+      fullPath: '/brand/whitepowder'
+      preLoaderRoute: typeof BrandWhitepowderRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/brand/test': {
       id: '/brand/test'
-      path: '/test'
+      path: '/brand/test'
       fullPath: '/brand/test'
       preLoaderRoute: typeof BrandTestRouteImport
-      parentRoute: typeof BrandRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/brand/_layout': {
-      id: '/brand/_layout'
-      path: '/brand'
-      fullPath: '/brand'
-      preLoaderRoute: typeof BrandLayoutRouteImport
-      parentRoute: typeof BrandRoute
+    '/brand/whitepowder/': {
+      id: '/brand/whitepowder/'
+      path: '/'
+      fullPath: '/brand/whitepowder/'
+      preLoaderRoute: typeof BrandWhitepowderIndexRouteImport
+      parentRoute: typeof BrandWhitepowderRoute
     }
-    '/brand/_layout/whitepowder/': {
-      id: '/brand/_layout/whitepowder/'
-      path: '/whitepowder'
-      fullPath: '/brand/whitepowder'
-      preLoaderRoute: typeof BrandLayoutWhitepowderIndexRouteImport
-      parentRoute: typeof BrandLayoutRoute
-    }
-    '/brand/_layout/sprite/': {
-      id: '/brand/_layout/sprite/'
-      path: '/sprite'
+    '/brand/sprite/': {
+      id: '/brand/sprite/'
+      path: '/brand/sprite'
       fullPath: '/brand/sprite'
-      preLoaderRoute: typeof BrandLayoutSpriteIndexRouteImport
-      parentRoute: typeof BrandLayoutRoute
+      preLoaderRoute: typeof BrandSpriteIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/brand/_layout/feng/': {
-      id: '/brand/_layout/feng/'
-      path: '/feng'
+    '/brand/feng/': {
+      id: '/brand/feng/'
+      path: '/brand/feng'
       fullPath: '/brand/feng'
-      preLoaderRoute: typeof BrandLayoutFengIndexRouteImport
-      parentRoute: typeof BrandLayoutRoute
+      preLoaderRoute: typeof BrandFengIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brand/whitepowder/products/': {
+      id: '/brand/whitepowder/products/'
+      path: '/products'
+      fullPath: '/brand/whitepowder/products'
+      preLoaderRoute: typeof BrandWhitepowderProductsIndexRouteImport
+      parentRoute: typeof BrandWhitepowderRoute
+    }
+    '/brand/whitepowder/products/lamunation': {
+      id: '/brand/whitepowder/products/lamunation'
+      path: '/products/lamunation'
+      fullPath: '/brand/whitepowder/products/lamunation'
+      preLoaderRoute: typeof BrandWhitepowderProductsLamunationRouteImport
+      parentRoute: typeof BrandWhitepowderRoute
+    }
+    '/brand/whitepowder/products/lamunation/': {
+      id: '/brand/whitepowder/products/lamunation/'
+      path: '/'
+      fullPath: '/brand/whitepowder/products/lamunation/'
+      preLoaderRoute: typeof BrandWhitepowderProductsLamunationIndexRouteImport
+      parentRoute: typeof BrandWhitepowderProductsLamunationRoute
+    }
+    '/brand/whitepowder/products/kirakiramonsters/': {
+      id: '/brand/whitepowder/products/kirakiramonsters/'
+      path: '/products/kirakiramonsters'
+      fullPath: '/brand/whitepowder/products/kirakiramonsters'
+      preLoaderRoute: typeof BrandWhitepowderProductsKirakiramonstersIndexRouteImport
+      parentRoute: typeof BrandWhitepowderRoute
+    }
+    '/brand/whitepowder/products/lamunation/stages': {
+      id: '/brand/whitepowder/products/lamunation/stages'
+      path: '/stages'
+      fullPath: '/brand/whitepowder/products/lamunation/stages'
+      preLoaderRoute: typeof BrandWhitepowderProductsLamunationStagesRouteImport
+      parentRoute: typeof BrandWhitepowderProductsLamunationRoute
+    }
+    '/brand/whitepowder/products/lamunation/special': {
+      id: '/brand/whitepowder/products/lamunation/special'
+      path: '/special'
+      fullPath: '/brand/whitepowder/products/lamunation/special'
+      preLoaderRoute: typeof BrandWhitepowderProductsLamunationSpecialRouteImport
+      parentRoute: typeof BrandWhitepowderProductsLamunationRoute
+    }
+    '/brand/whitepowder/products/lamunation/music': {
+      id: '/brand/whitepowder/products/lamunation/music'
+      path: '/music'
+      fullPath: '/brand/whitepowder/products/lamunation/music'
+      preLoaderRoute: typeof BrandWhitepowderProductsLamunationMusicRouteImport
+      parentRoute: typeof BrandWhitepowderProductsLamunationRoute
+    }
+    '/brand/whitepowder/products/lamunation/gallery': {
+      id: '/brand/whitepowder/products/lamunation/gallery'
+      path: '/gallery'
+      fullPath: '/brand/whitepowder/products/lamunation/gallery'
+      preLoaderRoute: typeof BrandWhitepowderProductsLamunationGalleryRouteImport
+      parentRoute: typeof BrandWhitepowderProductsLamunationRoute
+    }
+    '/brand/whitepowder/products/lamunation/download': {
+      id: '/brand/whitepowder/products/lamunation/download'
+      path: '/download'
+      fullPath: '/brand/whitepowder/products/lamunation/download'
+      preLoaderRoute: typeof BrandWhitepowderProductsLamunationDownloadRouteImport
+      parentRoute: typeof BrandWhitepowderProductsLamunationRoute
+    }
+    '/brand/whitepowder/products/lamunation/compaign': {
+      id: '/brand/whitepowder/products/lamunation/compaign'
+      path: '/compaign'
+      fullPath: '/brand/whitepowder/products/lamunation/compaign'
+      preLoaderRoute: typeof BrandWhitepowderProductsLamunationCompaignRouteImport
+      parentRoute: typeof BrandWhitepowderProductsLamunationRoute
+    }
+    '/brand/whitepowder/products/lamunation/characters': {
+      id: '/brand/whitepowder/products/lamunation/characters'
+      path: '/characters'
+      fullPath: '/brand/whitepowder/products/lamunation/characters'
+      preLoaderRoute: typeof BrandWhitepowderProductsLamunationCharactersRouteImport
+      parentRoute: typeof BrandWhitepowderProductsLamunationRoute
+    }
+    '/brand/whitepowder/products/lamunation/about': {
+      id: '/brand/whitepowder/products/lamunation/about'
+      path: '/about'
+      fullPath: '/brand/whitepowder/products/lamunation/about'
+      preLoaderRoute: typeof BrandWhitepowderProductsLamunationAboutRouteImport
+      parentRoute: typeof BrandWhitepowderProductsLamunationRoute
     }
   }
 }
 
-interface BrandLayoutRouteChildren {
-  BrandLayoutFengIndexRoute: typeof BrandLayoutFengIndexRoute
-  BrandLayoutSpriteIndexRoute: typeof BrandLayoutSpriteIndexRoute
-  BrandLayoutWhitepowderIndexRoute: typeof BrandLayoutWhitepowderIndexRoute
+interface BrandWhitepowderProductsLamunationRouteChildren {
+  BrandWhitepowderProductsLamunationAboutRoute: typeof BrandWhitepowderProductsLamunationAboutRoute
+  BrandWhitepowderProductsLamunationCharactersRoute: typeof BrandWhitepowderProductsLamunationCharactersRoute
+  BrandWhitepowderProductsLamunationCompaignRoute: typeof BrandWhitepowderProductsLamunationCompaignRoute
+  BrandWhitepowderProductsLamunationDownloadRoute: typeof BrandWhitepowderProductsLamunationDownloadRoute
+  BrandWhitepowderProductsLamunationGalleryRoute: typeof BrandWhitepowderProductsLamunationGalleryRoute
+  BrandWhitepowderProductsLamunationMusicRoute: typeof BrandWhitepowderProductsLamunationMusicRoute
+  BrandWhitepowderProductsLamunationSpecialRoute: typeof BrandWhitepowderProductsLamunationSpecialRoute
+  BrandWhitepowderProductsLamunationStagesRoute: typeof BrandWhitepowderProductsLamunationStagesRoute
+  BrandWhitepowderProductsLamunationIndexRoute: typeof BrandWhitepowderProductsLamunationIndexRoute
 }
 
-const BrandLayoutRouteChildren: BrandLayoutRouteChildren = {
-  BrandLayoutFengIndexRoute: BrandLayoutFengIndexRoute,
-  BrandLayoutSpriteIndexRoute: BrandLayoutSpriteIndexRoute,
-  BrandLayoutWhitepowderIndexRoute: BrandLayoutWhitepowderIndexRoute,
+const BrandWhitepowderProductsLamunationRouteChildren: BrandWhitepowderProductsLamunationRouteChildren =
+  {
+    BrandWhitepowderProductsLamunationAboutRoute:
+      BrandWhitepowderProductsLamunationAboutRoute,
+    BrandWhitepowderProductsLamunationCharactersRoute:
+      BrandWhitepowderProductsLamunationCharactersRoute,
+    BrandWhitepowderProductsLamunationCompaignRoute:
+      BrandWhitepowderProductsLamunationCompaignRoute,
+    BrandWhitepowderProductsLamunationDownloadRoute:
+      BrandWhitepowderProductsLamunationDownloadRoute,
+    BrandWhitepowderProductsLamunationGalleryRoute:
+      BrandWhitepowderProductsLamunationGalleryRoute,
+    BrandWhitepowderProductsLamunationMusicRoute:
+      BrandWhitepowderProductsLamunationMusicRoute,
+    BrandWhitepowderProductsLamunationSpecialRoute:
+      BrandWhitepowderProductsLamunationSpecialRoute,
+    BrandWhitepowderProductsLamunationStagesRoute:
+      BrandWhitepowderProductsLamunationStagesRoute,
+    BrandWhitepowderProductsLamunationIndexRoute:
+      BrandWhitepowderProductsLamunationIndexRoute,
+  }
+
+const BrandWhitepowderProductsLamunationRouteWithChildren =
+  BrandWhitepowderProductsLamunationRoute._addFileChildren(
+    BrandWhitepowderProductsLamunationRouteChildren,
+  )
+
+interface BrandWhitepowderRouteChildren {
+  BrandWhitepowderIndexRoute: typeof BrandWhitepowderIndexRoute
+  BrandWhitepowderProductsLamunationRoute: typeof BrandWhitepowderProductsLamunationRouteWithChildren
+  BrandWhitepowderProductsIndexRoute: typeof BrandWhitepowderProductsIndexRoute
+  BrandWhitepowderProductsKirakiramonstersIndexRoute: typeof BrandWhitepowderProductsKirakiramonstersIndexRoute
 }
 
-const BrandLayoutRouteWithChildren = BrandLayoutRoute._addFileChildren(
-  BrandLayoutRouteChildren,
-)
-
-interface BrandRouteChildren {
-  BrandLayoutRoute: typeof BrandLayoutRouteWithChildren
-  BrandTestRoute: typeof BrandTestRoute
-  BrandIndexRoute: typeof BrandIndexRoute
+const BrandWhitepowderRouteChildren: BrandWhitepowderRouteChildren = {
+  BrandWhitepowderIndexRoute: BrandWhitepowderIndexRoute,
+  BrandWhitepowderProductsLamunationRoute:
+    BrandWhitepowderProductsLamunationRouteWithChildren,
+  BrandWhitepowderProductsIndexRoute: BrandWhitepowderProductsIndexRoute,
+  BrandWhitepowderProductsKirakiramonstersIndexRoute:
+    BrandWhitepowderProductsKirakiramonstersIndexRoute,
 }
 
-const BrandRouteChildren: BrandRouteChildren = {
-  BrandLayoutRoute: BrandLayoutRouteWithChildren,
-  BrandTestRoute: BrandTestRoute,
-  BrandIndexRoute: BrandIndexRoute,
-}
-
-const BrandRouteWithChildren = BrandRoute._addFileChildren(BrandRouteChildren)
+const BrandWhitepowderRouteWithChildren =
+  BrandWhitepowderRoute._addFileChildren(BrandWhitepowderRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BrandRoute: BrandRouteWithChildren,
+  BrandTestRoute: BrandTestRoute,
+  BrandWhitepowderRoute: BrandWhitepowderRouteWithChildren,
+  BrandIndexRoute: BrandIndexRoute,
+  ProfileIndexRoute: ProfileIndexRoute,
   TestIndexRoute: TestIndexRoute,
+  BrandFengIndexRoute: BrandFengIndexRoute,
+  BrandSpriteIndexRoute: BrandSpriteIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

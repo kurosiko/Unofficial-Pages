@@ -6,7 +6,7 @@ import Sky from '@/components/sub/feng/Sky'
 import SlideShow from '@/components/sub/feng/SlideShow'
 import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createFileRoute('/brand/_layout/feng/')({
+export const Route = createFileRoute('/brand/feng/')({
   component: RouteComponent,
 })
 

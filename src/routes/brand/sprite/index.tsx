@@ -2,7 +2,7 @@ import Footer from '@/components/sub/sprite/Footer'
 import Header from '@/components/sub/sprite/Header'
 import { createFileRoute } from '@tanstack/react-router'
 
-export const Route = createFileRoute('/brand/_layout/sprite/')({
+export const Route = createFileRoute('/brand/sprite/')({
   component: RouteComponent,
 })
 
