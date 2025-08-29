@@ -1,6 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router'
-import ImageViewer from '@/components/ImageViewer'
-import { useState } from 'react'
 import News from './-components/News'
 
 export const Route = createFileRoute('/brand/whitepowder/products/lamunation/')({

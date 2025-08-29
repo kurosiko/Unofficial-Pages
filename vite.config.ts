@@ -1,24 +1,38 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig as testConfig } from 'vitest/config'
+import { defineConfig } from 'vite'
 import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
+import tanstackRouter from '@tanstack/router-plugin/vite'
 import { resolve } from 'node:path'
 
-// https://vitejs.dev/config/
-export default defineConfig({
+const tstConfig = testConfig(
+  {
+    test:{
+      globals:true,
+      environment:"jsdom"
+    }
+  }
+)
+
+const config = defineConfig({
   plugins: [
-    TanStackRouterVite({ autoCodeSplitting: true }),
+    tanstackRouter({
+      target:"react",
+      autoCodeSplitting:true
+    }),
     viteReact(),
     tailwindcss(),
   ],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-  },
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
     },
   },
 })
+
+// https://vitejs.dev/config/
+export default {
+  ...config,
+  ...tstConfig
+}
